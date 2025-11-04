@@ -1,9 +1,5 @@
 # VulnNote - Installation and Setup Guide for Beginners
 
-**Author:** Manus AI  
-**Date:** November 3, 2025  
-**Difficulty Level:** Beginner-Friendly  
-**Estimated Time:** 30-45 minutes
 
 ---
 
@@ -688,6 +684,5 @@ If you encounter any issues or have questions:
 
 **Document Version:** 1.0  
 **Last Updated:** November 3, 2025  
-**Author:** Manus AI
 
 Happy learning! 🚀🔒
