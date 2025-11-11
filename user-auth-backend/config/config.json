@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "josephazar",
+    "password": null,
+    "database": "bip_auth_db",
+    "host": "localhost",
+    "port": "5432",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "josephazar",
+    "password": null,
+    "database": "bip_auth_db_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
+    "port": "",
+    "dialect": "postgres"
+  }
+}

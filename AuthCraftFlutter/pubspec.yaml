@@ -1,0 +1,31 @@
+name: authcraft_flutter
+description: A Flutter authentication app with secure storage for educational purposes
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # HTTP client for API calls
+  http: ^1.1.0
+
+  # Secure storage (uses Android Keychain on Android)
+  flutter_secure_storage: ^9.0.0
+
+  # State management
+  provider: ^6.1.1
+
+  # UI components
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true

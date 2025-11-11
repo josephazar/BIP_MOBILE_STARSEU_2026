@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1, h2 {
+            margin-top: 20px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>API Documentation</h1>
+
+<!-- User Registration -->
+<h2>User Registration</h2>
+<p><strong>Endpoint:</strong> <code>POST http://localhost:3000/api/v1/register</code></p>
+<p><strong>Description:</strong> Register a new user with the provided information.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+    "name": "John Doe",
+    "mobile_number": "1234567890",
+    "email_address": "john.doe@example.com",
+    "group_name": "A",
+    "password": "password",
+    "confirmPassword": "password"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+    "success": true,
+    "message": "User registered successfully",
+    "result": {
+        "id": 1,
+        "name": "John Doe",
+        "mobile_number": "1234567890",
+        "email_address": "john.doe@example.com",
+        "password": "password",
+        "active": 0,
+        "otp": null,
+        "password_reset_code": null,
+        "status": 1,
+        "created_at": "CURRENT_TIMESTAMP",
+        "updated_at": null
+    }
+}</code></pre>
+
+<!-- User Login -->
+<h2>User Login</h2>
+<p><strong>Endpoint:</strong> <code>POST http://localhost:3000/api/v1/login</code></p>
+<p><strong>Description:</strong> Login with user credentials.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+    "email_address": "john.doe@example.com",
+    "password": "password"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+    "success": true,
+    "message": "Login successful",
+    "result": {
+        "id": 1,
+        "name": "John Doe",
+        "mobile_number": "1234567890",
+        "email_address": "john.doe@example.com",
+        "password": "password",
+        "active": 0,
+        "otp": null,
+        "password_reset_code": null,
+        "status": 1,
+        "created_at": "2024-05-01T05:25:54.000Z",
+        "updated_at": null
+    }
+}</code></pre>
+
+<!-- Login with Mobile Number -->
+<h2>Login with Mobile Number</h2>
+<p><strong>Endpoint:</strong> <code>POST http://localhost:3000/api/v1/login_with_mobile</code></p>
+<p><strong>Description:</strong> Login using mobile number.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+    "mobile_number": "1234567890"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+    "success": true,
+    "message": "Data found!",
+    "result": {
+        "id": 1,
+        "name": "John Doe",
+        "mobile_number": "1234567890",
+        "email_address": "john.doe@example.com",
+        "password": "password",
+        "active": 0,
+        "otp": "644192",
+        "password_reset_code": null,
+        "status": 1,
+        "created_at": "2024-05-01T05:25:54.000Z",
+        "updated_at": null
+    }
+}</code></pre>
+
+<!-- Check OTP -->
+<h2>Check OTP</h2>
+<p><strong>Endpoint:</strong> <code>POST http://localhost:3000/api/v1/check_otp</code></p>
+<p><strong>Description:</strong> Check OTP sent to mobile number.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "mobile_number": "1234567890",
+  "otp": "123456"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+    "success": true,
+    "message": "Data found!",
+    "result": {
+        "id": 1,
+        "name": "John Doe",
+        "mobile_number": "1234567890",
+        "email_address": "john.doe@example.com",
+        "password": "password",
+        "active": 0,
+        "otp": "262276",
+        "password_reset_code": null,
+        "status": 1,
+        "created_at": "2024-05-01T05:25:54.000Z",
+        "updated_at": null
+    }
+}</code></pre>
+
+<!-- Send Password Reset Code -->
+<h2>Send Password Reset Code</h2>
+<p><strong>Endpoint:</strong> <code>POST http://localhost:3000/api/v1/send_password_reset_code</code></p>
+<p><strong>Description:</strong> Send password reset code to email address.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "email_address": "joseph.azar@univ-fcomte.fr"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+    "success": true,
+    "message": "Data found!",
+    "result": {
+        "id": 1,
+        "name": "John Doe",
+        "mobile_number": "1234567890",
+        "email_address": "john.doe@example.com",
+        "password": "password",
+        "active": 0,
+        "otp": "",
+        "password_reset_code": null,
+        "status": 1,
+        "created_at": "2024-05-01T05:25:54.000Z",
+        "updated_at": null
+    }
+}</code></pre>
+
+<!-- Check Verification Code -->
+<h2>Check Verification Code</h2>
+<p><strong>Endpoint:</strong> <code>POST http://localhost:3000/api/v1/check_verification_code</code></p>
+<p><strong>Description:</strong> Check password reset verification code.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "email_address": "joseph.azar@univ-fcomte.fr",
+  "password_reset_code": "123456"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+    "success": true,
+    "message": "Data found!",
+    "result": {
+        "id": 1,
+        "name": "John Doe",
+        "mobile_number": "1234567890",
+        "email_address": "john.doe@example.com",
+        "password": "password",
+        "active": 0,
+        "otp": "",
+        "password_reset_code": "460218",
+        "status": 1,
+        "created_at": "2024-05-01T05:25:54.000Z",
+        "updated_at": null
+    }
+}</code></pre>
+
+<!-- Reset Password -->
+<h2>Reset Password</h2>
+<p><strong>Endpoint:</strong> <code>POST http://localhost:3000/api/v1/reset_password</code></p>
+<p><strong>Description:</strong> Reset user password.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "email_address": "joseph.azar@univ-fcomte.fr",
+  "password_reset_code": "123456",
+  "password":"123456",
+  "confirmPassword":"123456"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+    "success": true,
+    "message": "Password reset successfully",
+    "result": {
+        "id": 1,
+        "name": "John Doe",
+        "mobile_number": "1234567890",
+        "email_address": "john.doe@example.com",
+        "password": "password",
+        "active": 0,
+        "otp": "",
+        "password_reset_code": "460218",
+        "status": 1,
+        "created_at": "2024-05-01T05:25:54.000Z",
+        "updated_at": null
+    }
+}</code></pre>
+
+<!-- User Details -->
+<h2>User Details</h2>
+<p><strong>Endpoint:</strong> <code>GET http://localhost:3000/api/v1/user_details/1</code></p>
+<p><strong>Description:</strong> Retrieve details of a specific user.</p>
+<p><strong>Response:</strong></p>
+<pre><code>{
+    "success": true,
+    "message": "User Found",
+    "result": {
+        "id": 1,
+        "name": "John Doe",
+        "mobile_number": "1234567890",
+        "email_address": "john.doe@example.com",
+        "password": "123456",
+        "active": 0,
+        "otp": "",
+        "password_reset_code": null,
+        "status": 1,
+        "created_at": "2024-05-01T05:25:54.000Z",
+        "updated_at": null
+    }
+}</code></pre>
+
+<!-- User Update -->
+<h2>User Update</h2>
+<p><strong>Endpoint:</strong> <code>PUT http://localhost:3000/api/v1/user_update/2</code></p>
+<p><strong>Description:</strong> Update user information.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+    "name": "Joseph Azar",
+    "mobile_number": "01717116732",
+    "email_address": "joseph.azar@univ-fcomte.fr"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+    "success": true,
+    "message": "User information update successfully",
+    "result": {
+        "id": 2,
+        "name": "Joseph Azar",
+        "mobile_number": "01717116732",
+        "email_address": "joseph.azar@univ-fcomte.fr",
+        "password": "654321",
+        "active": 0,
+        "otp": "",
+        "password_reset_code": null,
+        "status": 1,
+        "created_at": "2024-05-01T11:41:38.000Z",
+        "updated_at": null
+    }
+}</code></pre>
+
+<!-- Change Password -->
+<h2>Change Password</h2>
+<p><strong>Endpoint:</strong> <code>PUT http://localhost:3000/api/v1/change_password/2</code></p>
+<p><strong>Description:</strong> Change user password.</p>
+<p><strong>Request Body:</strong></p>
+<pre><code>{
+  "old_password": "654321",
+  "password":"123456",
+  "confPassword":"123456"
+}</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code>{
+    "success": true,
+    "message": "Password change successfully",
+    "result": {
+        "id": 2,
+        "name": "Joseph Azar",
+        "mobile_number": "01717116732",
+        "email_address": "joseph.azar@univ-fcomte.fr",
+        "password": "654321",
+        "active": 0,
+        "otp": "",
+        "password_reset_code": null,
+        "status": 1,
+        "created_at": "2024-05-01T11:41:38.000Z",
+        "updated_at": null
+    }
+}</code></pre>
+
+</body>
+</html>

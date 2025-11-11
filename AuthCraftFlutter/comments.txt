@@ -1,0 +1,20 @@
+Run flutter pub get in the AuthCraftFlutter directory. Here's how:
+cd "/Users/josephazar/Desktop/Android/BIP/BIP-Mobile Technologies and Programming/AuthCraftFlutter"
+flutter pub get
+Or since you're currently in that directory already (based on the file you opened), you can just run:
+flutter pub get
+This command will:
+Read the pubspec.yaml file
+Download all dependencies:
+flutter_secure_storage: ^9.0.0
+http: ^1.1.0
+provider: ^6.1.1
+Generate the necessary lock files
+After running flutter pub get, you can then run the app with:
+
+flutter create --platforms=android .
+
+flutter run
+Note: Make sure you have the backend server running first:
+cd "../user-auth-backend"
+npm start
